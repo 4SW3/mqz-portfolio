@@ -1,0 +1,52 @@
+.preloader {
+  @extend %flex-center;
+  @extend %cover;
+  flex-direction: column;
+  // background-color: $color-light;
+  color: $color-dark;
+  text-align: center;
+  z-index: z-idx('preloader');
+}
+
+.preloader_text,
+.progress {
+  // .preloader_number {
+  margin: 10px 0;
+}
+
+.preloader_text {
+  @extend %title-25;
+  max-width: 50rem;
+  font-size: 26px;
+
+  span {
+    display: inline-block;
+  }
+}
+
+.progress {
+  position: relative;
+  width: 400px;
+  max-width: 85vw;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #ffffff80;
+  overflow: hidden;
+
+  &_inside {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 4px;
+    background-color: $color-dark;
+  }
+}
+
+// .preloader_number {
+//   @extend %txt-14;
+//   font-size: 20px;
+// 
+// @include media('<=phone') {
+//   font-size: 4rem;
+// }
+// }

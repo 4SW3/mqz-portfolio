@@ -1,0 +1,159 @@
+.footer {
+  @extend %flex-center;
+  margin-top: 10rem;
+  position: relative;
+  z-index: z-idx('footer');
+  height: 100vh;
+
+  color: $color-dark;
+  transition: color 1.4s;
+
+  &.in-view {
+    color: $color-light;
+  }
+
+  &.in-view .reachme_icon {
+    border-color: $color-light;
+  }
+
+  &.in-view .reachme_svg {
+    fill: $color-light;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+  }
+
+  &_line {
+    border-top: 1px solid;
+    position: absolute;
+    top: 6%;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  &_title {
+    @extend %title-80;
+    pointer-events: none;
+    letter-spacing: 0.4rem;
+    margin: 0 auto 4rem;
+    pointer-events: none;
+    text-transform: uppercase
+  }
+
+  &_email {
+    text-align: center;
+    margin: 4rem auto;
+    font-size: 1.8rem;
+    position: relative;
+
+    @include media('<=tablet') {
+      font-size: 20px;
+      margin: 40px auto;
+    }
+  }
+
+  &_reachme {
+    @extend %flex-center;
+    margin: 4rem auto 0;
+
+    &_item {
+      margin: 0 2rem;
+    }
+
+    .reachme_icon {
+      position: relative;
+      display: inline-block;
+      border: 1px solid $color-dark;
+      border-radius: 50%;
+      width: 4rem;
+      height: 4rem;
+      padding: 1rem;
+
+      transition: border-color 1.4s;
+    }
+
+    .reachme_svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      transform: translate(-50%, -50%);
+      fill: $color-dark;
+
+      transition: fill 1.4s;
+    }
+
+    #mail_svg {
+      width: 75%;
+    }
+
+    #linkedin_svg {
+      width: 65%;
+    }
+  }
+}
+
+.footer_overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+
+  path {
+    transform: scale(0);
+    transition: transform 1s;
+  }
+
+  g.blob.in-view path {
+    transform: scale(1.1);
+  }
+}
+
+// @keyframes blob {
+//   0% {
+//     transform: scale(0);
+//   }
+
+//   100% {
+//     transform: scale(1);
+//   }
+// }
+
+@include media('<=phone') {
+  .footer .footer_title {
+    font-size: 50px;
+  }
+
+  .footer_reachme .reachme_icon {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .footer .footer_line {
+    display: none;
+    opacity: 0;
+  }
+
+  .footer .footer_title {
+    margin: 0 auto 1rem;
+  }
+
+  .footer .footer_email {
+    margin: 1rem auto;
+  }
+
+  .footer .footer_reachme {
+    margin: 1rem auto 0;
+  }
+
+}

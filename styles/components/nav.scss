@@ -1,0 +1,93 @@
+.nav {
+  @extend %cover;
+  @extend %nav--hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: z-idx('nav');
+
+  &_wrapper {
+    @extend %cover;
+  }
+
+  &_list {
+    @extend %cover;
+
+    &_item {
+      @extend %txt-16;
+      line-height: 1.6rem;
+      pointer-events: auto;
+      position: absolute;
+      opacity: 1;
+
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+
+      @include media('<=tablet') {
+        font-size: 18px;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 1.5vh;
+      }
+
+      &:nth-child(1) {
+        top: 1vh;
+        left: 1vw;
+      }
+
+      &:nth-child(2) {
+        right: 10vw;
+
+        @include media('<=tablet') {
+          right: 100px;
+        }
+      }
+
+      &:nth-child(3) {
+        right: 1.5vw;
+
+        @include media('<=tablet') {
+          right: 10px;
+        }
+      }
+
+      // @include media('<=phone') {
+      //   &:nth-child(1) { }
+      // }
+    }
+
+    &_item--hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  &_link {
+    &--active {
+      &:after {
+        transform: scaleX(1) !important;
+        transform-origin: left center !important;
+      }
+    }
+
+    display: inline-block;
+    line-height: 1;
+    vertical-align: middle;
+
+    .nav_list_item:not(:first-child) & {
+      @extend %link--hidden;
+    }
+  }
+
+  .nav_link {
+    &_icon {
+      width: 40px;
+
+      @include media('<=phone') {
+        width: 30px;
+      }
+    }
+  }
+}

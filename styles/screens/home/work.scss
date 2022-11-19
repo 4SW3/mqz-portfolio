@@ -1,0 +1,205 @@
+.work {
+  @extend %txt-14;
+  min-height: 100vh;
+  position: relative;
+  color: $color-dark;
+  z-index: 2;
+  font-size: 1.4rem;
+
+  @include media('<=tablet') {
+    font-size: 20px;
+  }
+
+  &_header {
+    &_content {
+      // TODO check that...
+      // thats the temporary fix to the footer being offscreen
+      // before I was applying padding-top to the parent el (&_header)
+      padding-top: 5rem;
+    }
+
+    .work_header_title {
+      @extend %title-80;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 2px;
+
+      @include media('<=phone') {
+        font-size: 60px;
+      }
+    }
+
+    .work_header_description {
+      width: 500px;
+      margin: 1rem 6rem 0 auto;
+      line-height: 1.2;
+
+      @include media('<=tablet') {
+        margin: 1rem auto;
+        width: 90%;
+      }
+    }
+  }
+
+  &_list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5rem auto 0;
+    width: 99%;
+
+    @include media('<=tablet') {
+      width: calc(100% - 2rem);
+    }
+
+    &_link {
+      position: relative;
+      z-index: 10;
+    }
+
+    &_item {
+      display: block;
+
+      @include media('<=tablet') {
+
+        // including all those selections for specificity
+        &:nth-child(n) {
+          margin: 3rem auto 0 !important;
+          width: 100%;
+        }
+      }
+
+      .list_item_media {
+        position: relative;
+
+        img {
+          @extend %cover;
+          object-fit: cover;
+        }
+      }
+
+      @include media('<=tablet') {
+
+        // including all those selections for specificity
+        &:nth-child(n) {
+          a .list_item_media {
+            width: 100%;
+            height: auto;
+            padding-top: 100%;
+          }
+        }
+      }
+
+      .list_item_title {
+        margin-bottom: 0.5rem;
+      }
+
+      &:nth-child(1) {
+        margin-right: 1rem;
+        margin-top: 10rem;
+
+        .list_item_media {
+          width: 40rem;
+          height: 40rem;
+        }
+      }
+
+      &:nth-child(2) {
+        .list_item_media {
+          width: 55rem;
+          height: 35rem;
+        }
+      }
+
+      &:nth-child(3) {
+        align-self: center;
+        margin-top: 10rem;
+        margin-right: 1rem;
+        margin-left: auto;
+
+        .list_item_media {
+          width: 55rem;
+          height: 35rem;
+        }
+      }
+
+      &:nth-child(4) {
+        .list_item_media {
+          width: 40rem;
+          height: 40rem;
+        }
+      }
+
+      &:nth-child(5) {
+        margin-top: 10rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        .list_item_media {
+          width: 65rem;
+          height: 45rem;
+        }
+      }
+    }
+
+    .work_shader_content {
+      width: 100%;
+    }
+
+    .work_list_shader {
+      margin-top: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      width: 70%;
+
+      .list_item_title {
+        margin-bottom: 0.5rem;
+      }
+
+      @include media('<=tablet') {
+        margin: 3rem auto 0 !important;
+        width: 100%;
+      }
+
+    }
+
+    .work_shader_title {
+      @extend %title-80;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 2px;
+
+      @include media('<=phone') {
+        font-size: 60px;
+      }
+    }
+
+    .list_item_shader {
+      position: relative;
+      padding-top: 40rem;
+      margin: auto;
+      width: 100%;
+
+      .list_item_shader_media {
+        @extend %cover;
+        object-fit: cover;
+      }
+
+      @include media('<=tablet') {
+
+        height: auto;
+        padding-top: 100%;
+        width: 100%;
+      }
+
+    }
+
+    .list_item_container {
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+%screen {
+  @extend %cover;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: z-idx('content');
+}
+
+%screen--active {
+  opacity: 1;
+  pointer-events: auto;
+  transition: none;
+  visibility: visible;
+}
+
+%screen_wrapper {
+  color: inherit;
+}

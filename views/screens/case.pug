@@ -1,0 +1,164 @@
+mixin template({ id, title, banner, technologies, descr, link, gallery, exp})
+  article.case(id=id)
+    a.case_link(href='/') X
+
+    .case_content
+      header.case_header
+        h2.case_header_title() #{title}
+        figure.case_header_media
+          img.case_header_media_image(
+            id=`case_header_media_image--${id}`
+            data-src=`${banner}.png`
+            data-src-webp=`${banner}.webp`
+          )
+
+      aside.case_info
+        .case_info_tags
+          p.case_info_detail
+            strong Technologies
+            | #{technologies}
+
+          if link && link.url && link.url.startsWith('http')
+            p.case_info_detail
+              strong= link.github ? 'SRC Code' : 'Live URL'
+              | #[a(href=link.url target="_blank" rel="noreferrer noopener") View]
+          else if link && link.url && link.url == 'private'
+            p.case_info_detail
+              strong Live URL
+              | Private
+          else
+            p.case_info_detail
+              strong Live URL
+              | Offline
+        
+        .case_info_descr
+          | #[p.case_info_descr_txt #{descr}]
+        
+      .case_gallery
+        each content, index in gallery
+          if content.type === 'screenshot'
+            .case_gallery_media
+              .case_gallery_media_item
+                img.case_gallery_media_placeholder.webgl_media_placeholder(
+                  data-media-id=`${id}`
+                  data-src=`${content.image}.png`
+                  data-src-webp=`${content.image}.webp`
+                )
+          else
+            .case_gallery_media
+              .case_gallery_media_item
+                video.case_gallery_media_placeholder.webgl_media_placeholder(
+                  data-media-id=`${id}`
+                  data-src=`${content.image}` 
+                  data-media-type='video' 
+                  autoplay 
+                  loop
+                )
+        
+      .case_next
+        .case_next_text(
+          data-animation='text-scramble' 
+          data-animation-txt-content=`${id === 'bugtracker' || id === 'shader-fbm' ? 'Return Home' : 'Next Project'}`
+          data-url='/case'
+        ) 
+
+.cases
+  +template({
+    id: 'rp-chauffeurs',
+    title: 'RP Chauffeurs',
+    banner: '/media/rp/thumb',
+    technologies: 'React - JavaScript - Vercel',
+    descr: `
+      RP Chauffeurs provides personal chauffeur car services with strong emphasis on punctuality and professionalism.
+      The site showcases the some of the provided services and helps the client get in touch and book the desired one.
+    `,
+    link: { url: 'https://www.rprj.app/', github: false },
+    gallery: [
+      { image: '/media/rp/rp-1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/rp/rp-2', type: 'screenshot', height: '1080', width: '1920' }
+    ]
+  })
+
+  +template({
+    id: 'ceam-academic',
+    title: 'CEAM Academic',
+    banner: '/media/ceam/thumb',
+    technologies: 'NodeJS - React - TypeScript - MongoDB - Heroku - Vercel',
+    descr: `
+      School application that allows the management of students academic life, the user can manage features 
+      such as grades, disciplines, presence, lesson plans, calendars and more.
+    `,
+    link: { url: 'private', github: false },
+    gallery: [
+      { image: '/media/ceam/ceam-1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/ceam/ceam-2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/ceam/ceam-3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/ceam/ceam-4', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/ceam/ceam-5', type: 'screenshot', height: '1080', width: '1920' }
+    ]
+  })
+
+  +template({
+    id: 'ecommerce',
+    title: 'Ecommerce',
+    banner: '/media/ecommerce/thumb',
+    technologies: 'React - TypeScript - Golang - PostgreSQL - Heroku',
+    descr: `
+      Generic personal ecommerce application, that allows users to sign up, login and pucharse products using 
+      payment methods like paypal and credit card. It also has some admin features built to manage products, 
+      users and purchases. PS.: Video content from vecteezy, url for attribution https://www.vecteezy.com/video/3220275-woman-shopping-online-on-smartphone-with-credit-card-at-home.
+    `,
+    link: {url: 'https://github.com/4d3v/ecommerce', github: true },
+    gallery: [
+      { image: '/media/ecommerce/ecommerce-1.mp4', type: 'video', height: '1080', width: '1920' },
+      { image: '/media/ecommerce/ecommerce-2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/ecommerce/ecommerce-3', type: 'screenshot', height: '1080', width: '1920' },
+    ]
+  })
+
+  +template({
+    id: 'game-wiki-and-build-editor',
+    title: 'Elyon DB',
+    banner: '/media/dbbe/thumb',
+    technologies: 'NodeJS - React - JavaScript - MongoDB - AWS',
+    descr: `
+      ElyonDB was created for the game Elyon Online, it acted as a build editor + wiki. Users could
+      create builds and share with others via a hashed link. The wiki would contain everything about
+      classes, characters, races, skills and more. The site was taken down due to the decreased interest
+      in the game. 
+    `,
+    gallery: [
+      { image: '/media/dbbe/dbbe-1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/dbbe/dbbe-2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/dbbe/dbbe-3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/dbbe/dbbe-4', type: 'screenshot', height: '1080', width: '1920' },
+    ]
+  })
+
+  +template({
+    id: 'bugtracker',
+    title: 'Bugtracker',
+    banner: '/media/bugtracker/thumb',
+    technologies: 'NodeJS - JavaScript - MongoDB - Heroku',
+    descr: `
+      Personal application that allows users to track and manage bugs. It was made in early 2020 and took
+      inspiration on github's issue panel.
+    `,
+    link: {url: 'https://github.com/4d3v/simple-bugtracker', github: true },
+    gallery: [
+      { image: '/media/bugtracker/bugtracker-1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/bugtracker/bugtracker-2', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/bugtracker/bugtracker-3', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/bugtracker/bugtracker-4', type: 'screenshot', height: '1080', width: '1920' },
+    ]
+  })
+
+  +template({
+    id: 'shader-fbm',
+    title: 'FBM',
+    banner: '/media/fbm/thumb',
+    technologies: 'GLSL',
+    descr: `Expirement with fbm.`,
+    link: { url: 'private', github: false },
+    gallery: []
+  })

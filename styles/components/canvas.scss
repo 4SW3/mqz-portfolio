@@ -1,0 +1,10 @@
+canvas {
+  display: block;
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  z-index: z-idx('canvas');
+}

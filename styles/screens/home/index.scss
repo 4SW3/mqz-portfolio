@@ -1,0 +1,13 @@
+.home {
+  @extend %screen;
+
+  &--active {
+    @extend %screen--active;
+  }
+
+  &_content {
+    // @extend %cover;
+    will-change: transform;
+    overflow: hidden;
+  }
+}

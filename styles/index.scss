@@ -1,0 +1,25 @@
+@import './utils/vars.scss';
+@import './utils/fns.scss';
+@import './utils/mixins.scss';
+@import './utils/responsive.scss';
+@import './utils/vendors.scss';
+
+@import './base/fonts';
+@import './base/global';
+@import './base/reset';
+
+@import './shared/text.scss';
+@import './shared/links.scss';
+@import './shared/screen.scss';
+@import './shared/title.scss';
+
+@import './components/canvas.scss';
+@import './components/nav.scss';
+@import './components/preloader.scss';
+
+@import './screens/home/index.scss';
+@import './screens/home/intro.scss';
+@import './screens/home/work.scss';
+@import './screens/home/footer.scss';
+
+@import './screens/case/index.scss';

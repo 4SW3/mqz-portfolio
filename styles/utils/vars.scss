@@ -1,0 +1,24 @@
+$phone-width: 768px;
+$tablet-width: 1024px;
+$desktop-width: 1920px;
+
+$font-h2-phone: 14rem;
+
+$min-font: 12px;
+$max-font: 18px;
+
+$color-dark: #333;
+$color-light: #ddd;
+
+$font-jura: 'Jura Variable', sans-serif;
+
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+$z-layers: (
+  'noscript',
+  'canvas',
+  'content',
+  'footer',
+  'nav',
+  'preloader'
+);

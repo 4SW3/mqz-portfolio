@@ -1,0 +1,199 @@
+.cases {
+  @extend %screen;
+  position: fixed;
+
+  &--active {
+    @extend %screen--active;
+  }
+}
+
+.case {
+  @extend %screen;
+  min-height: 100vh;
+
+  &--active {
+    @extend %screen--active;
+    // opacity: 1;
+    // pointer-events: auto;
+    // visibility: visible;
+  }
+
+  &_content {
+    @extend %txt-14;
+    will-change: transform;
+    overflow: hidden;
+    padding-top: 5vh;
+  }
+
+  &_link {
+    @extend %txt-14;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: z-idx('nav');
+    display: inline-block;
+    line-height: 1.05;
+    pointer-events: auto;
+    overflow: hidden;
+    vertical-align: top;
+    font-size: 2.5vmin;
+    font-weight: bold;
+
+    @include media('<=phone') {
+      font-size: 20px;
+
+    }
+  }
+
+  &_header {
+    &_title {
+      @extend %title-50;
+      text-transform: uppercase;
+      white-space: nowrap;
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 2px;
+
+      @include media('<=phone') {
+        font-size: 9vmin;
+      }
+    }
+
+    &_media {
+      font-size: 0;
+      overflow: hidden;
+      position: relative;
+      margin: auto;
+      width: 100%;
+      height: 80vh;
+      background-color: $color-dark;
+      pointer-events: none;
+      visibility: hidden;
+
+      img {
+        @extend %cover;
+        object-fit: cover;
+      }
+    }
+  }
+
+
+  &_info {
+    margin: 6rem auto;
+    max-width: 90rem;
+    width: 90%;
+  }
+
+  &_info_tags {
+    @extend %flex-center;
+    justify-content: space-between;
+  }
+
+  &_info_detail,
+  &_info_descr {
+    font-size: 1.5rem;
+  }
+
+  &_info_detail {
+    strong {
+      display: block;
+      text-transform: uppercase;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    @include media('<=phone') {
+      font-size: 14px;
+    }
+  }
+
+  &_info_descr {
+    margin-top: 3rem;
+
+    @include media('<=phone') {
+      font-size: 14px;
+      margin-top: 20px;
+    }
+  }
+
+  &_info_descr_txt {
+    line-height: 30px;
+
+    @include media('<=phone') {
+      line-height: 23px;
+    }
+  }
+
+  // &_gallery {}
+
+  &_gallery_media {
+    visibility: hidden;
+
+    &:not(:first-child) {
+      margin-top: 5rem;
+    }
+
+    &_item {
+      display: block;
+      font-size: 0;
+      margin: auto;
+      position: relative;
+      width: 92%;
+
+      background-color: $color-dark;
+
+      @include media('<=phone') {
+        width: 98%;
+      }
+    }
+
+    &_placeholder {
+      @extend %cover;
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      // padding-top: 50%;
+      // z-index: 2;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    // img.case_gallery_media_placeholder {
+    //   padding-top: 0;
+    //   // z-index: 2;
+    //   object-fit: cover;
+    //   pointer-events: none;
+    // }
+  }
+
+  &_next {
+    display: block;
+    margin-left: 50%;
+    overflow: hidden;
+    padding: 8rem 0;
+    text-align: right;
+    width: 50%;
+    // transition: opacity .4s ease;
+
+    &_text {
+      @extend %title-50;
+      padding-right: 10rem;
+      padding-bottom: 0.5rem;
+      text-transform: uppercase;
+      position: relative;
+      cursor: pointer;
+      // transition: opacity .5s ease;
+
+      &::after {
+        content: '';
+        bottom: 0;
+        height: 1px;
+        position: absolute;
+        right: 10rem;
+        width: 70%;
+        display: block;
+        background-color: $color-dark;
+      }
+    }
+  }
+}

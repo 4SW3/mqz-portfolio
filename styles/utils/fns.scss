@@ -1,0 +1,23 @@
+@function z-idx($name) {
+  $z: null;
+
+  @if type-of($z-layers)==map {
+    $z: map-get($z-layers, $name);
+  }
+
+  @if type-of($z-layers)==list {
+    @for $i from 1 through length($z-layers) {
+      @if nth($z-layers, $i)==$name {
+        $z: $i;
+      }
+    }
+  }
+
+  @if $z {
+    @return $z;
+  }
+
+  @else {
+    @error('Could not find a z-index for `#{$name}`');
+  }
+}

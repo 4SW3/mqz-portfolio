@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    include ./partials/head
+
+    //- link(href='../styles/index.scss' rel='stylesheet')
+
+  body
+    include ./partials/preloader
+    include ./partials/nav
+
+    .content#content(data-template='content')
+      include ./screens/home
+      include ./screens/case
+
+    include ./partials/noscript
+      //- include ./partials/analytics
+
+      //- script(src=require('../src/app.js'))

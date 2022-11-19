@@ -1,0 +1,147 @@
+mixin worklist({id, url, title, media_url, media_alt})
+  article.work_list_item
+    h3.list_item_title(data-animation='home-text' data-url='/') #{title}
+    a.work_list_link(href=`${url}`)
+      .list_item_container.lic-0
+        figure.list_item_media
+          img.list_item_media_image.webgl_media_placeholder(
+            crossOrigin=''
+            data-src=`${media_url}.png`
+            data-src-webp=`${media_url}.webp` 
+            data-media-id=`${id}`
+            alt=`${media_alt}`
+          )
+
+.home
+  .home_content
+    section#intro.intro
+      .intro_content(data-src='/media/intro.mp4')
+        .intro_text
+          .tt
+        .intro_arrow_text
+          | scroll
+          svg.intro_arrow_icon(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 22 35' xml:space='preserve')
+            polygon.arrow(points='20.58,11.584 12.004,20.158 12.004,0 9.996,0 9.996,20.158 1.42,11.584 0,13.004 11,24\
+            22,13.004 ')
+
+    section#work.work
+      header.work_header
+        .work_header_content
+          h2.work_header_title(data-animation='text-scramble' data-animation-txt-content='Work' data-url='/')
+            | Work
+          p.work_header_description(data-animation='home-text' data-url='/' data-custom-duration='1.5') 
+            | I'm Jean Marques Nascimento, software engineer with strong focus on web development based in Rio de Janeiro, Brazil. Check below some of my works.
+
+      .work_list
+        +worklist({
+          id: 'rp-chauffeurs',
+          url: '/case/rp-chauffeurs',
+          title: 'CHAUFFEUR SERVICE WEBSITE',
+          media_url: '/media/rp/thumb',
+          media_alt: 'rp chauffeurs'
+        })
+        +worklist({
+          id: 'ceam-academic',
+          url: '/case/ceam-academic',
+          title: 'SCHOOL ACADEMIC APPLICATION',
+          media_url: '/media/ceam/thumb',
+          media_alt: 'ceam academic'
+        })
+        +worklist({
+          id: 'ecommerce',
+          url: '/case/ecommerce',
+          title: 'ECOMMERCE APPLICATION',
+          media_url: '/media/ecommerce/thumb',
+          media_alt: 'ecommerce'
+        })
+        +worklist({
+          id: 'game-wiki-and-build-editor',
+          url: '/case/game-wiki-and-build-editor',
+          title: 'DATABASE & BUILD EDITOR',
+          media_url: '/media/dbbe/thumb',
+          media_alt: 'game wiki and build editor'
+        })
+        +worklist({
+          id: 'bugtracker',
+          url: '/case/bugtracker',
+          title: 'BUGTRACKER APPLICATION',
+          media_url: '/media/bugtracker/thumb',
+          media_alt: 'bugtracker'
+        })
+
+      .work_list
+        .work_shader_content
+          h2.work_shader_title(data-animation='text-scramble' data-animation-txt-content='Shaders' data-url='/')
+            | Shaders
+
+        article.work_list_shader
+          h3.list_item_title(data-animation='home-text' data-url='/') FBM
+          a.work_list_link(href='/case/shader-fbm')
+            .list_item_container.lic-0
+              figure.list_item_shader
+                img.list_item_shader_media.webgl_media_placeholder(
+                  crossOrigin=''
+                  src='/media/fbm/thumb.webp'
+                  data-src='/media/fbm/thumb.png'
+                  data-src-webp='/media/fbm/thumb.webp'
+                  data-media-id='shader-fbm'
+                  alt='fbm'
+                )
+    
+    footer#footer.footer
+      .footer_content
+        .footer_line
+        h2.footer_title(data-animation='text-scramble' data-animation-txt-content='Reach Me' data-url='/')
+        .footer_email
+          a.email_link(href='mailto:jean--mn@outlook.com')
+            span.email_text jean--mn@outlook.com
+
+        ul.footer_reachme
+          li.footer_reachme_item 
+            a.reachme_link(href='mailto:jean-mn@outlook.com')
+              span.reachme_icon 
+                svg#mail_svg.reachme_svg(xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewbox='0 0 122.88 85.57')
+                  path(d='M3.8,0,62.48,47.85,118.65,0ZM0,80.52,41.8,38.61,0,4.53v76ZM46.41,42.37,3.31,85.57h115.9L78,42.37,64.44,53.94h0a3,3,0,0,1-3.78.05L46.41,42.37Zm36.12-3.84,40.35,42.33V4.16L82.53,38.53Z')
+
+
+          li.footer_reachme_item 
+            a.reachme_link(href='https://github.com/4d3v' target='_blank')
+              span.reachme_icon 
+                svg#github_svg.reachme_svg(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 578.305 578.305' xml:space='preserve')
+                  g
+                    path(d='M533.32,160.379c0.532-26.518-5.294-53.33-10.024-79.731c-1.628-9.088-4.927-17.87-8.177-26.487\
+                    c-2.448-6.487-9.676-10.618-16.334-9.198c-4.309,0.918-8.183,1.812-11.94,3.048c-39.327,12.938-75.741,31.86-110.723,53.844\
+                    c-4.7,2.95-11.536,4.015-17.21,3.599c-13.574-0.992-27.001-4.37-40.569-5.013c-33.58-1.591-67.093-0.569-100.368,5.251\
+                    c-4.626,0.808-10.716,0.012-14.559-2.472C165.27,78.537,125.582,57.411,80.937,45.55c-6.702-1.781-13.599-0.838-15.294,1.824\
+                    c-1.035,1.628-1.971,3.317-2.485,5.128c-4.823,16.946-10.539,33.807-13.342,51.114c-3.341,20.655-6.554,41.935-4.969,62.565\
+                    c0.998,12.968-2.583,20.937-9.669,30.037C11.407,226.757,0.703,261.861,0.048,300.35c-0.563,32.919,3.794,65,13.819,96.47\
+                    c15.355,48.219,45.006,84.406,89.652,107.95c36.708,19.357,76.708,26.818,117.639,28.256c36.892,1.292,73.856,0.196,110.79,0.404\
+                    c37.021,0.208,73.532-3.091,108.948-14.633c35.447-11.549,66.121-30.184,89.922-59.486\
+                    c34.376-42.326,45.079-92.186,47.276-144.965c1.684-40.361-6.542-78.329-30.178-111.347\
+                    C538.332,189.603,532.959,178.097,533.32,160.379z M462.047,469.641c-15.876,13.728-35.288,20.227-55.16,24.976\
+                    c-38.99,9.315-78.69,11.635-118.519,9.896c-39.37,1.707-78.287-0.747-116.592-9.762c-28.256-6.646-54.052-17.821-72.032-42.075\
+                    c-28.611-38.599-35.924-112.057,11.353-152.148c12.056-10.221,25.502-16.708,41.39-17.717c17.534-1.12,35.074-3.305,52.595-3.097\
+                    c44.199,0.526,88.378,2.724,132.571,3.054c20.184,0.146,40.509-4.56,60.545-3.348c18.207,1.102,37.351,4.455,53.875,11.781\
+                    c27.546,12.215,42.374,36.983,46.854,65.992C505.597,400.326,496.796,439.586,462.047,469.641z')
+                    ellipse(cx='390.026' cy='385.552' rx='42.124' ry='56.298')
+                    ellipse(cx='189.028' cy='385.552' rx='42.13' ry='56.298')
+
+          li.footer_reachme_item 
+            a.reachme_link(href='https://br.linkedin.com/in/jean--marques' target='_blank')
+              span.reachme_icon 
+                svg#linkedin_svg.reachme_svg(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 310 310' xml:space='preserve')
+                  g#XMLID_801_
+                    path#XMLID_802_(d='M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73\
+                    C77.16,101.969,74.922,99.73,72.16,99.73z')
+                    path#XMLID_803_(d='M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4\
+                    c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z')
+                    path#XMLID_804_(d='M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599\
+                    c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319\
+                    c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995\
+                    C310,145.43,300.549,94.761,230.454,94.761z')
+
+    svg.footer_overlay(viewbox='0 0 1000 1000' preserveaspectratio='xMidYMid slice')
+      //- g.blob(transform='translate(-100, -100)')
+      //-   path(d='M1664 170.677C1664 1030.49 258.646 1486 -340.87 1486C-940.386 1486 -1663 844.461 -1663 244.755C-1663 -354.951 -951.361 -2124.12 -115.096 -1244.02C657.685 -349.996 1664 -1130.4 1664 170.677Z' fill='#170a1e')
+      g.blob(transform='translate(1100, 1100)')
+        path(d='M1559 3.58236C1559 618.239 1003.61 1246 381.955 1246C-239.696 1246 -1559 749.65 -1559 -184.09C-1559 -1117.83 -1103.77 -1245 433.402 -1245C1055.05 -1245 1559 -611.074 1559 3.58236Z' fill='#1d1226')
