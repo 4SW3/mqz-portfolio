@@ -26,7 +26,7 @@ class App {
     this.initScreens()
     this.initNav()
 
-    // this.setupStats()
+    // this.setupStats() 
 
     if (this.url.indexOf('/case') > -1) {
       this.curPage = this.screens.routes.get('/case')
