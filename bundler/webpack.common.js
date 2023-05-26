@@ -7,6 +7,7 @@ const path = require('path')
 const env = process.env.NODE_ENV || 'production'
 
 const folders = [
+  'case/echosight/index.html',
   'case/rp-chauffeurs/index.html',
   'case/ceam-academic/index.html',
   'case/ecommerce/index.html',

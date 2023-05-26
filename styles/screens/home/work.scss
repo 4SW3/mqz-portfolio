@@ -141,6 +141,13 @@
           height: 45rem;
         }
       }
+
+      &:nth-child(6) {
+        .list_item_media {
+          width: 30rem;
+          height: 30rem;
+        }
+      }
     }
 
     .work_shader_content {

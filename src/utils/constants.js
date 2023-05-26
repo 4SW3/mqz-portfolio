@@ -2,6 +2,7 @@ export const colorDark = '#333'
 export const colorLight = '#ddd'
 export const colors = {
   'home': { bg: colorLight, cl: colorDark },
+  'echosight': { bg: colorDark, cl: colorLight },
   'rp-chauffeurs': { bg: colorDark, cl: colorLight },
   'ceam-academic': { bg: colorLight, cl: colorDark },
   'ecommerce': { bg: colorLight, cl: colorDark },

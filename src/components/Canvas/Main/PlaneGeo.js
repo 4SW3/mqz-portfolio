@@ -38,6 +38,7 @@ export default class PlaneGeo {
   createColors() {
     return {
       home: 0.7,
+      echosight: 0.02,
       'rp-chauffeurs': 0.2,
       'ceam-academic': 0.87,
       ecommerce: 0.75,

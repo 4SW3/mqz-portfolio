@@ -64,6 +64,28 @@ mixin template({ id, title, banner, technologies, descr, link, gallery, exp})
 
 .cases
   +template({
+    id: 'echosight',
+    title: 'EchoSight',
+    banner: '/media/echosight/image-search-1',
+    technologies: 'Python - JavaScript - Golang - Weaviate - Img2vec-neural - Docker',
+    descr: `
+      EchoSight is a side project that harnesses the power of AI to allow users to search for images
+      based on similarity. With the given image, EchoSight will analyze it and return the 20 most similar images.
+      The database currently holds over 10,000 images collected from Midjourney.
+
+      EchoSight is primarily intended for study and research purposes, serving as a valuable tool
+      to explore the capabilities of image recognition and retrieval algorithms, thus pushing the
+      boundaries of image search technology.
+    `,
+    link: { url: 'private', github: false },
+    gallery: [
+      { image: '/media/echosight/image-search.mp4', type: 'video', height: '1080', width: '1920' },
+      { image: '/media/echosight/image-search-1', type: 'screenshot', height: '1080', width: '1920' },
+      { image: '/media/echosight/image-search-2', type: 'screenshot', height: '1080', width: '1920' }
+    ]
+  })
+
+  +template({
     id: 'rp-chauffeurs',
     title: 'RP Chauffeurs',
     banner: '/media/rp/thumb',
